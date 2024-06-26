@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotic Hand</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            
+            <h1>Robotic Hand</h1>
+            <div class="selection-box">
+                <label for="mode">Choose a mode:</label>
+                <select id="mode" name="mode" onchange="onSelectionHandler(this)">
+                    <option value="" selected disabled>------Select-----</option>
+                    <option value="video_feed">Video Cam</option>
+                    <option value="manual">Manual</option>
+                </select>
+            </div>
+        </div>
+        <div class="right-panel">
+            
+            <img src="{{ url_for('static', filename='img/ro_without_back.png') }}" alt="Robotic Hand">
+        </div>
+    </div>
+    <button class="theme-toggle" id="themeToggle">
+        ☀️
+    </button>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
