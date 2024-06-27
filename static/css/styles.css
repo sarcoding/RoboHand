@@ -1,3 +1,4 @@
+/* Styles remain the same as before */
 * {
     margin: 0;
     padding: 0;
@@ -15,17 +16,31 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.team-info {
+    background-color: #f0f0f7;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.team-info p {
+    margin: 5px 0;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
 .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 80%;
     height: 70%;
     max-width: 1200px;
     background: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    padding: 5%;
+    padding: 20px;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -39,6 +54,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 h1 {
@@ -64,10 +80,50 @@ select {
     color: #333;
 }
 
-.right-panel img {
-    max-width: 100%;
-    height: auto;
+.hand-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.hand-image {
+    width: 100%;
     border-radius: 10px;
+}
+
+.buttons-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.finger-button {
+    position: absolute;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 50%;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.finger-button:hover {
+    background-color: #45a049;
+}
+
+/* Adjust the button positions based on the new hand image */
+#finger1 { top: 35%; left: 5%; } /* Adjust this value */
+#finger2 { top: 12%; left: 19%; } /* Adjust this value */
+#finger3 { top: 5%; left: 46%; } /* Adjust this value */
+#finger4 { top: 10%; left: 64%; } /* Adjust this value */
+#finger5 { top: 20%; left: 85%; } /* Adjust this value */
+
+.hidden {
+    display: none;
 }
 
 .theme-toggle {

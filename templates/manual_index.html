@@ -16,6 +16,7 @@
             <h1>Robotic Hand</h1>
             <br>
             <br>
+            <h1>Robotic Hand</h1>
             <div class="selection-box">
                 <label for="mode">Choose a mode:</label>
                 <select id="mode" name="mode" onchange="onSelectionHandler(this)">
@@ -27,7 +28,14 @@
         </div>
         <div class="right-panel">
             <div class="hand-container">
-                <img id="handImage" src="{{ url_for('static', filename='img/ro_without_back.png') }}" alt="Robotic Hand" class="hand-image" height="350" width="500">
+                <img id="handImage" src="{{ url_for('static', filename='img/hand.png') }}" alt="Robotic Hand" class="hand-image" height="350" width="500">
+                <form action="/button-clicked" method="POST">
+                    <button type="submit" id ="finger1" class="finger-button" name="button_value" value="0" onclick="toggleColor(this)"> </button>
+                    <button type="submit" id ="finger2" class="finger-button" name="button_value" value="1" onclick="toggleColor(this)"> </button>
+                    <button type="submit" id ="finger3" class="finger-button" name="button_value" value="2" onclick="toggleColor(this)"> </button>
+                    <button type="submit" id ="finger4" class="finger-button" name="button_value" value="3" onclick="toggleColor(this)"> </button>
+                    <button type="submit" id ="finger5" class="finger-button" name="button_value" value="4" onclick="toggleColor(this)"> </button>
+                </form>
             </div>
         </div>
     </div>

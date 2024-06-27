@@ -1,11 +1,16 @@
+from cvzone.HandTrackingModule import HandDetector
+from cvzone.SerialModule import SerialObject
+import cv2
+
+serialObject = SerialObject("COM5", baudRate=9600, digits=1)
+
+curr_status = [1, 1, 1, 1, 1]
+serialObject.sendData(curr_status)
+
 def hand_tracker():
-    from cvzone.HandTrackingModule import HandDetector
-    from cvzone.SerialModule import SerialObject
-    import cv2
     cap = cv2.VideoCapture(0)
 
     detector = HandDetector(maxHands=2, detectionCon=0.8)
-    serialObject = SerialObject("COM5", baudRate=9600, digits=1)
     mode = ""
     data = ""
 
@@ -28,3 +33,8 @@ def hand_tracker():
             break
     cap.release()
     cv2.destroyAllWindows()
+
+def manual_changer(idx):
+    global curr_status
+    curr_status[idx] = 1 - curr_status[idx]
+    serialObject.sendData(curr_status)
